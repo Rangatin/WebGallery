@@ -1,8 +1,28 @@
+<?link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet"?>
 <zk>
-	<window apply="org.zkoss.bind.BindComposer"
+	<window apply="org.zkoss.bind.BindComposer" title = "Home"
 		viewModel="@id('vm')@init('org.webgallery.MyViewModel')"
 		validationMessages="@id('vmsgs')">
 		<hlayout>count: <label value="@load(vm.count)" /></hlayout>
-		<button label="add" onClick="@command('cmd')"/>
+		<!-- onClick="@command('cmd')" -->
+
+		<vbox spacing="2em">
+			<hbox spacing="5em">
+				<button label="My Photos" href="index.zul"/>
+				<button label="Add New Photo" />
+			</hbox>
+
+			<div>
+				<hlayout>Search for a photo</hlayout>
+				Keyword:
+				<textbox id="keywordBox" />
+				<button id="searchButton" iconSclass="z-icon-fw z-icon-search" label="Search" image="/img/search.png" />
+			</div>
+		</vbox>
+
+
+
+
 	</window>
+
 </zk>
